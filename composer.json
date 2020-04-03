@@ -1,0 +1,19 @@
+{
+    "name": "andreafiori/code-katas-php",
+    "description": "PHP code dojo algorithms, data structures, code katas and design patterns",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "mockery/mockery": "dev-master"
+    }
+}
