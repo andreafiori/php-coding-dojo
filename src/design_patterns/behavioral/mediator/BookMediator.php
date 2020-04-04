@@ -2,8 +2,8 @@
 
 namespace design_patterns\behavioral\mediator;
 
-class BookMediator {
-
+class BookMediator
+{
     /**
      * @var BookAuthorColleague
      */
@@ -24,6 +24,8 @@ class BookMediator {
     }
 
     /**
+     * Get Author BookAuthorColleague
+     *
      * @return BookAuthorColleague
      */
     public function getAuthor() {

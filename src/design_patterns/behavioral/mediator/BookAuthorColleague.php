@@ -2,22 +2,33 @@
 
 namespace design_patterns\behavioral\mediator;
 
-class BookAuthorColleague extends BookColleague {
-
+class BookAuthorColleague extends BookColleague
+{
+    /**
+     * @var string
+     */
     private $author;
+
+    /**
+     * @var string
+     */
     private $state;
 
     /**
-     * @param string $author_in
-     * @param string $mediator_in
+     * Set author and mediator
+     *
+     * @param string $author
+     * @param string $mediator
      */
-    public function __construct($author_in, $mediator_in) {
-        $this->author = $author_in;
+    public function __construct($author, $mediator) {
+        $this->author = $author;
 
-        parent::__construct($mediator_in);
+        parent::__construct($mediator);
     }
 
     /**
+     * Get author
+     *
      * @return string
      */
     public function getAuthor() {
@@ -25,6 +36,8 @@ class BookAuthorColleague extends BookColleague {
     }
 
     /**
+     * Set author
+     *
      * @param $author_in
      */
     public function setAuthor($author_in) {
@@ -32,6 +45,8 @@ class BookAuthorColleague extends BookColleague {
     }
 
     /**
+     * Get state
+     *
      * @return mixed
      */
     public function getState() {
@@ -39,19 +54,27 @@ class BookAuthorColleague extends BookColleague {
     }
 
     /**
-     * @param $state_in
+     * Set state
+     *
+     * @param $state
      */
-    public function setState($state_in) {
-        $this->state = $state_in;
+    public function setState($state) {
+        $this->state = $state;
     }
 
-    public function setAuthorUpperCase() {
+    /**
+     * Set author Upper case
+     */
+    public function setAuthorUpperCase(): void {
         $this->setAuthor(strtoupper($this->getAuthor()));
         $this->setState('upper');
         $this->getMediator()->change($this);
     }
 
-    public function setAuthorLowerCase() {
+    /**
+     * Set author Lower case
+     */
+    public function setAuthorLowerCase(): void {
         $this->setAuthor(strtolower($this->getAuthor()));
         $this->setState('lower');
         $this->getMediator()->change($this);
