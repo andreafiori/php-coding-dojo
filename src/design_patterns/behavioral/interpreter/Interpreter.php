@@ -2,8 +2,11 @@
 
 namespace design_patterns\behavioral\interpreter;
 
-class Interpreter {
-  
+class Interpreter
+{
+    /**
+     * @var BookList
+     */
     private $bookList;
 
     /**
@@ -21,7 +24,7 @@ class Interpreter {
 
         $arrayIn = explode(" ",$stringIn);
 
-        $returnString = NULL;
+        $returnString = null;
 
         // Go through the array validating and if possible calling a book method could use refactoring, some duplicate logic
         if ('book' == $arrayIn[0]) {
@@ -67,9 +70,7 @@ class Interpreter {
             }
 
         } else {
-            $returnString = 'Can not process, '.
-                            'can only process book author #, <b'.
-                            'r> book title #, or book author title #';
+            $returnString = 'Can not process, can only process book author #, <br> book title #, or book author title #';
         }
 
         return $returnString;

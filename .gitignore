@@ -1,4 +1,5 @@
 .idea
+.phplint-cache
 vendor/
 coverage/
 composer.lock
