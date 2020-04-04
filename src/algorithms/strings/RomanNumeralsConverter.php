@@ -2,6 +2,34 @@
 
 namespace algorithms\strings;
 
+/**
+ * Roman numerals
+ * Wikipedia https://en.wikipedia.org/wiki/Roman_numerals
+ *
+ *  1 => I
+ *  2 => II
+ *  3 => III
+ *  4 => IV
+ *  5 => V
+ *  6 => VI
+ *  7 => VII
+ *  8 => VIII
+ *  9 => IX
+ *  10 => X
+ *  11 => XI
+ *  12 => XII
+ *  15 => XV
+ *  20 => XX
+ *  30 => XXX
+ *  40 => XL
+ *  41 => XLI
+ *  44 => XLIV
+ *  50 => L
+ *  100 => C
+ *  500 => D
+ *  900 => CM
+ *  1000 => M
+ */
 class RomanNumeralsConverter
 {
 	/**
@@ -25,6 +53,7 @@ class RomanNumeralsConverter
 
 	/**
      * Convert number to Roman
+     *
 	 * @param $number
 	 * @return string
 	 */
@@ -34,10 +63,8 @@ class RomanNumeralsConverter
 
 		$solution = '';
 
-		foreach (static::$lookup as $limit => $glyph)
-		{
-			while ($number >= $limit)
-			{
+		foreach (static::$lookup as $limit => $glyph) {
+			while ($number >= $limit) {
 				$solution .= $glyph;
 				$number -= $limit;
 			}

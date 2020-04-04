@@ -1,20 +1,26 @@
 <?php
 
-class BridgeBookCapsImp extends BridgeBookImp {
+namespace design_patterns\structural\bridge\book;
 
+class BridgeBookCapsImp extends BridgeBookImp
+{
     /**
-     * @param string $author_in
+     * Show author
+     *
+     * @param string $author
      * @return string
      */
-    public function showAuthor($author_in) {
-        return strtoupper($author_in);
+    public function showAuthor($author) {
+        return strtoupper($author);
     }
 
     /**
-     * @param string $title_in
+     * Show title
+     *
+     * @param string $title
      * @return string
      */
-    public function showTitle($title_in) {
-        return strtoupper($title_in);
+    public function showTitle($title) {
+        return strtoupper($title);
     }
 }

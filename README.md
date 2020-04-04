@@ -1,6 +1,8 @@
 # PHP Code Dojo
 
-Data structures, algorithms, design patterns and code katas implementations with PHP with Unit Tests.
+[![Build Status](https://travis-ci.org/andreafiori/php-code-dojo.svg?branch=master)](https://travis-ci.org/andreafiori/php-code-dojo)
+
+Data structures, algorithms, design patterns and code katas implementations with PHP with Unit Tests and documentation.
 
 ## Requirements
 
@@ -34,6 +36,8 @@ Be sure to have the X-Debug PHP extension:
 
 ## Resources
 
-- [Kata Catalogue](http://codingdojo.org/KataCatalogue/)
-- [CodeKata.com](http://codekata.com)
 - [PHPUnit](https://phpunit.de)
+- [CodeKata.com](http://codekata.com)
+- [Kata Catalogue](http://codingdojo.org/KataCatalogue/)
+- [Data structure](https://en.wikipedia.org/wiki/Data_structure)
+- [Algorithm](https://en.wikipedia.org/wiki/Algorithm)

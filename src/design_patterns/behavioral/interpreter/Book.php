@@ -2,21 +2,32 @@
 
 namespace design_patterns\behavioral\interpreter;
 
-class Book {
-
+class Book
+{
+    /**
+     * @var string
+     */
     private $author;
+
+    /**
+     * @var string
+     */
     private $title;
 
     /**
-     * @param string $title_in
-     * @param string $author_in
+     * Set author and title
+     *
+     * @param string $title
+     * @param string $author
      */
-    public function __construct($title_in, $author_in) {
-        $this->author = $author_in;
-        $this->title  = $title_in;
+    public function __construct($title, $author) {
+        $this->author = $author;
+        $this->title  = $title;
     }
 
     /**
+     * Get author
+     *
      * @return string
      */
     public function getAuthor() {
@@ -24,6 +35,8 @@ class Book {
     }
 
     /**
+     * Get title
+     *
      * @return string
      */
     public function getTitle() {
@@ -31,6 +44,8 @@ class Book {
     }
 
     /**
+     * Get concatenated author and title
+     *
      * @return string
      */
     public function getAuthorAndTitle() {

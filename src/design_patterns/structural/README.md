@@ -1,10 +1,8 @@
-Structural patterns
-======================
+# Structural patterns
 
 Structural patterns deal with the composition of classes or objects.
 
-List
-----------------------
+## List
 
 - Adapter
 - Bridge

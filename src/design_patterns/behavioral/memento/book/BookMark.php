@@ -1,9 +1,17 @@
 <?php
-  
+
+namespace design_patterns\behavioral\memento\book;
+
 class BookMark
 {
+    /**
+     * @var string
+     */
     private $title;
-    
+
+    /**
+     * @var int
+     */
     private $page;
     
     /**

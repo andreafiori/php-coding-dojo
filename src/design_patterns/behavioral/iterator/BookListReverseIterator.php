@@ -2,36 +2,37 @@
 
 namespace design_patterns\behavioral\iterator;
 
-class BookListReverseIterator extends BookListIterator {
-
+class BookListReverseIterator extends BookListIterator
+{
     /**
-     * @param BookList $bookList_in
+     * Set BookList
+     *
+     * @param BookList $bookList
      */
-    public function __construct(BookList $bookList_in) {
-        $this->bookList = $bookList_in;
+    public function __construct(BookList $bookList) {
+        parent::__construct($bookList);
+
+        $this->bookList = $bookList;
+
         $this->currentBook = $this->bookList->getBookCount() + 1;
     }
 
     /**
-     * @return null
+     * Get next book
+     *
+     * @return null|Book
      */
     public function getNextBook() {
-        if ($this->hasNextBook()) {
-            return $this->bookList->getBook(--$this->currentBook);
-        } else {
-            return NULL;
-        }
+        return ($this->hasNextBook()) ? $this->bookList->getBook(--$this->currentBook) : null;
     }
 
     /**
+     * Check if has the next book
+     *
      * @return bool
      */
     public function hasNextBook() {
-        if (1 < $this->currentBook) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return (1 < $this->currentBook);
     }
 
 }

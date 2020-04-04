@@ -1,27 +1,41 @@
 <?php
 
-abstract class BridgeBook {
+namespace design_patterns\structural\bridge\book;
 
+abstract class BridgeBook
+{
+    /**
+     * @var string
+     */
     private $bbAuthor;
+    /**
+     * @var string
+     */
     private $bbTitle;
+    /**
+     * @var string
+     */
     private $bbImp;
 
     /**
-     * @param string $author_in
-     * @param string $title_in
-     * @param $choice_in
+     * @param string $author
+     * @param string $title
+     * @param $choice
      */
-    public function __construct($author_in, $title_in, $choice_in) {
-        $this->bbAuthor = $author_in;
-        $this->bbTitle  = $title_in;
-        if ('STARS' == $choice_in) {
-        $this->bbImp = new BridgeBookStarsImp();
+    public function __construct($author, $title, $choice) {
+        $this->bbAuthor = $author;
+        $this->bbTitle  = $title;
+
+        if ('STARS' == $choice) {
+            $this->bbImp = new BridgeBookStarsImp();
         } else {
-        $this->bbImp = new BridgeBookCapsImp();
+            $this->bbImp = new BridgeBookCapsImp();
         }
     }
 
     /**
+     * Show author
+     *
      * @return mixed|string
      */
     public function showAuthor() {

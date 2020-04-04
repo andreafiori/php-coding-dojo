@@ -1,9 +1,11 @@
-Proxy pattern
-=========================
+# Proxy pattern
 
 In the proxy pattern one class stands in for and handles all access to another class.
 
-UML
-------------------------
+## UML
  
 ![Alt text](../../uml/proxy.jpg)
+
+## Resources
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Proxy_pattern)

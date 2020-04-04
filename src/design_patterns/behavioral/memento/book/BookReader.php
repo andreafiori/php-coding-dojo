@@ -1,26 +1,40 @@
 <?php
+
+namespace design_patterns\behavioral\memento\book;
   
-class BookReader {
-    
+class BookReader
+{
+    /**
+     * @var string
+     */
     private $title;
+
+    /**
+     * @var int
+     */
     private $page;
     
     /**
-     * @param string $title_in
-     * @param int $page_in
+     * Set page and title
+     *
+     * @param string $title
+     * @param int $page
      */
-    public function __construct($title_in, $page_in) {
-        $this->setPage($page_in);
-        $this->setTitle($title_in);
+    public function __construct($title, $page) {
+        $this->setPage($page);
+        $this->setTitle($title);
     }
     
     /**
-     * @param int $page_in
+     * @param int $page
      */
-    public function setPage($page_in) {
-        $this->page = $page_in;
+    public function setPage($page) {
+        $this->page = $page;
     }
-    
+
+    /**
+     * @return int
+     */
     public function getPage() {
         return $this->page;
     }

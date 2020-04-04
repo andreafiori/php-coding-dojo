@@ -21,4 +21,19 @@ class DeepFirstSearchTest extends TestCase
 
         $this->assertEquals(DeepFirstSearch::getNode('a', $arr) , $arr['a']);
     }
+
+    public function testGetSubNode()
+    {
+        $arr = array(
+            'a' => array(
+                'b' => array(
+                    'c' => array(
+                        'earth'
+                    )
+                ),
+            )
+        );
+
+        $this->assertEquals(DeepFirstSearch::getNode('c', $arr) , $arr['a']['b']['c']);
+    }
 }

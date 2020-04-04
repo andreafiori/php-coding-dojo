@@ -1,8 +1,12 @@
 <?php
 
-class BridgeBookAuthorTitle extends BridgeBook {
+namespace design_patterns\structural\bridge\book;
 
+class BridgeBookAuthorTitle extends BridgeBook
+{
     /**
+     * Show author and title
+     *
      * @return string
      */
     public function showAuthorTitle() {

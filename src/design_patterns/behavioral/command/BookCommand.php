@@ -2,17 +2,23 @@
 
 namespace design_patterns\behavioral\command;
 
-abstract class BookCommand {
-
+abstract class BookCommand
+{
+    /**
+     * @var BookCommandee
+     */
     protected $bookCommandee;
 
     /**
-     * @param $bookCommandee_in
+     * @param $bookCommandee
      */
-    public function __construct(BookCommandee $bookCommandee_in) {
-        $this->bookCommandee = $bookCommandee_in;
+    public function __construct(BookCommandee $bookCommandee) {
+        $this->bookCommandee = $bookCommandee;
     }
 
+    /**
+     * @return mixed
+     */
     abstract function execute();
 
 }

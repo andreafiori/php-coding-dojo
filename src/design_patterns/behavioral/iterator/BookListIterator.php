@@ -2,48 +2,54 @@
 
 namespace design_patterns\behavioral\iterator;
 
-class BookListIterator {
-
+class BookListIterator
+{
+    /**
+     * @var BookList
+     */
     protected $bookList;
+
+    /**
+     * @var int
+     */
     protected $currentBook = 0;
 
     /**
+     * Set BookList
+     *
      * @param BookList $bookList_in
      */
-    public function __construct(BookList $bookList_in) {
-        $this->bookList = $bookList_in;
+    public function __construct(BookList $bookList) {
+        $this->bookList = $bookList;
     }
 
     /**
-     * @return null
+     * Get current book
+     *
+     * @return null|Book
      */
     public function getCurrentBook() {
-        if (($this->currentBook > 0) &&
-            ($this->bookList->getBookCount() >= $this->currentBook)) {
-            return $this->bookList->getBook($this->currentBook);
-        }
+        $condition = $this->currentBook > 0 && ($this->bookList->getBookCount() >= $this->currentBook);
+
+        return ($condition) ? $this->bookList->getBook($this->currentBook) : null;
     }
 
     /**
-     * @return null
+     * Get next book
+     *
+     * @return null|Book
      */
     public function getNextBook() {
-        if ($this->hasNextBook()) {
-            return $this->bookList->getBook(++$this->currentBook);
-        } else {
-            return NULL;
-        }
+        return ($this->hasNextBook()) ? $this->bookList->getBook(++$this->currentBook) : null;
     }
 
     /**
+     * Check if it has the next book
+     *
      * @return bool
      */
     public function hasNextBook() {
-        if ($this->bookList->getBookCount() > $this->currentBook) {
-            return true;
-        } else {
-            return false;
-        }
+        return ($this->bookList->getBookCount() > $this->currentBook);
     }
 
 }

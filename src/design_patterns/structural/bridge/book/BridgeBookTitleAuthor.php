@@ -1,13 +1,15 @@
 <?php
-//copyright Lawrence Truett and FluffyCat.com 2006, all rights reserved
-  
-  include_once('BridgeBook.php');;  
-  
-  class BridgeBookTitleAuthor extends BridgeBook {    
-  
-    function showTitleAuthor() {
-      return $this->showTitle() . ' by ' . $this->showAuthor();
+
+namespace design_patterns\structural\bridge\book;
+
+class BridgeBookTitleAuthor extends BridgeBook
+{
+    /**
+     * Show title and author
+     *
+     * @return string
+     */
+    public function showTitleAuthor() {
+        return $this->showTitle() . ' by ' . $this->showAuthor();
     }
-  
-  }
-?>
+}

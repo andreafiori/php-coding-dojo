@@ -1,11 +1,11 @@
 <?php
 
-namespace tests\data_structures;
+namespace tests\data_structures\closure;
 
 use PHPUnit\Framework\TestCase;
 use data_structures\closure\ClosureNumberSample;
 
-class ClosureSampleTest extends TestCase
+class ClosureNumberSampleTest extends TestCase
 {
     public function testMul()
     {
@@ -13,7 +13,7 @@ class ClosureSampleTest extends TestCase
 
         $double = $two->mul();
 
-        $x = \Closure::bind($double, null, 'Number');
+        $x = \Closure::bind($double, null, ClosureNumberSample::class);
 
         $this->assertEquals($x(5),50);
     }

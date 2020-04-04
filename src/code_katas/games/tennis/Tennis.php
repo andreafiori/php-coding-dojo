@@ -4,6 +4,19 @@ namespace code_katas\games\tennis;
 
 /**
  * Tennis game
+ *
+ * Score:
+ * 0 = Love
+ *
+ *  1-0 => Fifteen-Love
+ *  2-0 => Thirty-Love
+ *   3-0 => Forty-Love
+ *  4-0 => Winner
+ *   4-3 => Advantage Player
+ *   4-4 => Deuce
+ *
+ *  2-2 => Thirty-All
+ *  1-1 => Fifteen-All
  */
 class Tennis
 {
@@ -52,18 +65,15 @@ class Tennis
      */
     public function score()
     {
-        if ($this->hasAWinner())
-        {
+        if ($this->hasAWinner())  {
             return 'Win for ' . $this->leader()->name;
         }
 
-        if ($this->inAdvantage())
-        {
+        if ($this->inAdvantage()) {
             return 'Advantage ' . $this->leader()->name;
         }
 
-        if ($this->inDeuce())
-        {
+        if ($this->inDeuce()) {
             return 'Deuce';
         }
 

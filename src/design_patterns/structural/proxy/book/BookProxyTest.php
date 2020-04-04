@@ -1,0 +1,18 @@
+<?php
+
+
+$proxyBookList = new ProxyBookList();
+
+$inBook = new Book('PHP for Cats','Larry Truett');
+
+$proxyBookList->addBook($inBook);
+
+echo '<strong>Test 1 - show the book count after a book is added:</strong> '.$proxyBookList->getBookCount();
+
+echo '<strong>Test 2 - show the book:</strong> ';
+$outBook = $proxyBookList->getBook(1);
+echo $outBook->getAuthorAndTitle();
+
+$proxyBookList->removeBook($outBook);
+
+echo '<strong>Test 3 - show the book count after a book is removed:</strong> '.$proxyBookList->getBookCount();

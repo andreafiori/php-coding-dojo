@@ -2,6 +2,18 @@
 
 namespace code_katas\games\bowling;
 
+/**
+ * - 10 frames
+ *   - 1 or 2 shots
+ *   - Spares
+ *           - 5
+ *           - 5 // spare
+ *          - 7 // 24
+ *      - Strike
+ *       - 10
+ *       - 2
+ *      - 4 // 22
+ */
 class BowlingGame
 {
 	/**

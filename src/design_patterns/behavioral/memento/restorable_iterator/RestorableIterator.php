@@ -2,16 +2,27 @@
 
 namespace design_patterns\behavioral\memento\restorable_iterator;
 
-class RestorableIterator implements Iterator, Restorable
+class RestorableIterator implements \Iterator, Restorable
 {
+    /**
+     * @var array
+     */
     private $_data;
+
+    /**
+     * @var int
+     */
     private $_cursor = 0;
+
+    /**
+     * @var bool
+     */
     private $_valid = false;
 
     /**
      * @param array $data
      */
-    public function  __construct(array $data = array())
+    public function  __construct($data = [])
     {
         $this->_data = $data;
         $this->_valid = (bool)count($this->_data);
@@ -26,6 +37,8 @@ class RestorableIterator implements Iterator, Restorable
     }
 
     /**
+     * Get cursor
+     *
      * @return int
      */
     public function key()
@@ -34,7 +47,7 @@ class RestorableIterator implements Iterator, Restorable
     }
 
     /**
-     * @return int
+     * @inheritDoc
      */
     public function getState()
     {
@@ -42,21 +55,27 @@ class RestorableIterator implements Iterator, Restorable
     }
 
     /**
-     * @param $state
+     * @inheritDoc
      */
     public function setState($state)
     {
         $this->_cursor = $state;
     }
 
-    public function next()
+    /**
+     * Next
+     */
+    public function next(): void
     {
         $max = count($this->_data) - 1;
 
         $this->_valid = $this->_cursor < $max ? (bool)(++$this->_cursor) : false;
     }
 
-    public function rewind()
+    /**
+     * Rewind
+     */
+    public function rewind(): void
     {
         $this->_valid = (bool)count($this->_data);
         $this->_cursor = 0;

@@ -2,10 +2,16 @@
 
 namespace design_patterns\behavioral\interpreter;
 
-class BookList {
-
+class BookList
+{
+    /**
+     * @var array
+     */
     private $books = array();
 
+    /**
+     * @var int
+     */
     private $bookCount = 0;
 
     /**
@@ -15,23 +21,23 @@ class BookList {
         return $this->bookCount;
     }
 
-  /**
-   * @param $newCount
-   */
-  private function setBookCount($newCount) {
-    $this->bookCount = $newCount;
-  }
+    /**
+     * @param int $newCount
+     */
+    private function setBookCount($newCount) {
+        $this->bookCount = $newCount;
+    }
 
     /**
+     * Get book by number
+     *
      * @param $bookNumberToGet
-     * @return null
+     * @return mixed
      */
     public function getBook($bookNumberToGet) {
-        if ( (is_numeric($bookNumberToGet)) && ($bookNumberToGet <= $this->getBookCount())) {
-            return $this->books[$bookNumberToGet];
-        } else {
-            return NULL;
-        }
+        $condition = is_numeric($bookNumberToGet) && $bookNumberToGet <= $this->getBookCount();
+
+        return ($condition) ? $this->books[$bookNumberToGet] : null;
     }
 
     /**
@@ -45,14 +51,16 @@ class BookList {
     }
 
     /**
-     * @param Book $book_in
+     * Remove book
+     *
+     * @param Book $book
      * @return int
      */
-    public function removeBook(Book $book_in) {
+    public function removeBook(Book $book) {
 
         $counter = 0;
         while (++$counter <= $this->getBookCount()) {
-            if ($book_in->getAuthorAndTitle() == $this->books[$counter]->getAuthorAndTitle()) {
+            if ($book->getAuthorAndTitle() == $this->books[$counter]->getAuthorAndTitle()) {
                 for ($x = $counter; $x < $this->getBookCount(); $x++) {
                     $this->books[$x] = $this->books[$x + 1];
                 }
