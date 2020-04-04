@@ -11,7 +11,7 @@ namespace data_structures\closure;
 class ClosureSample
 {
     private static $sfoo = 1;
-    private $ifoo = 2;
+    private static $ifoo = 2;
 
     static function getsFoo() {
         return self::$sfoo;
