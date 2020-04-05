@@ -5,8 +5,11 @@ namespace design_patterns\behavioral\observer\newspaper;
 /**
  * Observer,that who recieves news
  */
-class Reader implements SplObserver {
+class Reader implements \SplObserver {
 
+    /**
+     * @var string
+     */
     private $name;
 
     /**
@@ -17,7 +20,7 @@ class Reader implements SplObserver {
     }
 
     /**
-     * @param SplSubject $subject
+     * @param \SplSubject $subject
      */
     public function update(\SplSubject $subject) {
         echo $this->name.' is reading breakout news <b>'.$subject->getContent().'</b><br>';

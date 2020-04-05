@@ -4,7 +4,12 @@ namespace design_patterns\behavioral\memento\restorable_iterator;
 
 class Memento
 {
+    /**
+     * @var object
+     */
     private $_originator;
+
+    private $_state;
 
     /**
      * @param $originator

@@ -1,8 +1,6 @@
 # Concurrency patterns
 
-- [Wikipedia](http://en.wikipedia.org/wiki/Concurrency_pattern)
-
-<strong>Concurrency patterns</strong> deal with the multi-threaded programming paradigm.
+** Concurrency patterns**deal with the multi-threaded programming paradigm.
 
 ## List
 
@@ -18,3 +16,7 @@
 - Scheduler pattern
 - Thread pool pattern
 - Thread-Specific Storage
+
+## Resources
+
+- [Wikipedia](http://en.wikipedia.org/wiki/Concurrency_pattern)

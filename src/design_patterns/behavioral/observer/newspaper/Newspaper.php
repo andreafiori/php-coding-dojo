@@ -2,18 +2,26 @@
 
 namespace design_patterns\behavioral\observer\newspaper;
 
-/**
- * http://php.net/manual/it/class.splobserver.php
- *
- * Subject,that who makes news
- */
 class Newspaper implements \SplSubject
 {
+    /**
+     * @var string
+     */
     private $name;
-    private $observers = array();
+
+    /**
+     * @var array
+     */
+    private $observers = [];
+
+    /**
+     * @var string
+     */
     private $content;
 
     /**
+     * Set newspaper name
+     *
      * @param string $name
      */
     public function __construct($name) {
@@ -21,23 +29,18 @@ class Newspaper implements \SplSubject
     }
 
     /**
-     * Add observer
-     *
-     * @param \SplObserver $observer
+     * @inheritDoc
      */
     public function attach(\SplObserver $observer) {
         $this->observers[] = $observer;
     }
 
     /**
-     * Remove observer
-     *
-     * @param \SplObserver $observer
+     * @inheritDoc
      */
     public function detach(\SplObserver $observer) {
-
-        $key = array_search($observer,$this->observers, true);
-        if($key){
+        $key = array_search($observer, $this->observers, true);
+        if ($key) {
             unset($this->observers[$key]);
         }
     }
@@ -60,10 +63,10 @@ class Newspaper implements \SplSubject
     }
 
     /**
-     * Notify observers (or some of them)
+     * @inheritDoc
      */
     public function notify() {
-        foreach ($this->observers as $value) {
+        foreach($this->observers as $value) {
             $value->update($this);
         }
     }
