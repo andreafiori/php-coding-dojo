@@ -19,12 +19,12 @@ class PlainDescriptionVisitor extends Visitor {
     }
 
     /**
-     * @param BookVisitee $bookVisiteeIn
+     * @param BookVisitee $bookVisitee
      * @return $this
      */
-    public function visitBook(BookVisitee $bookVisiteeIn) {
-        $this->setDescription($bookVisiteeIn->getTitle()
-            .' written by ' .  $bookVisiteeIn->getAuthor() );
+    public function visitBook(BookVisitee $bookVisitee) {
+        $this->setDescription($bookVisitee->getTitle()
+            .' written by ' .  $bookVisitee->getAuthor() );
 
         return $this;
     }

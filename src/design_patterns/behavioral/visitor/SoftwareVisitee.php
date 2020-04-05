@@ -1,7 +1,7 @@
 <?php
 
-class SoftwareVisitee extends Visitee {
-
+class SoftwareVisitee extends Visitee
+{
     private $title;
     private $softwareCompany;
     private $softwareCompanyURL;

@@ -1,12 +1,12 @@
 <?php
 
-abstract class Visitor {
-
+abstract class Visitor
+{
     /**
-     * @param BookVisitee $bookVisitee_In
+     * @param BookVisitee $bookVisitee
      * @return mixed
      */
-    abstract function visitBook(BookVisitee $bookVisitee_In);
+    abstract function visitBook(BookVisitee $bookVisitee);
 
     /**
      * @param SoftwareVisitee $softwareVisitee_In

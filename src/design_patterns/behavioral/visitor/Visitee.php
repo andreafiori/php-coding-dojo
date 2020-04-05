@@ -1,7 +1,7 @@
 <?php
 
-abstract class Visitee {
-
+abstract class Visitee
+{
     /**
      * @param Visitor $visitorIn
      * @return mixed

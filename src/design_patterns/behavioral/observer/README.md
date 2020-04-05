@@ -9,3 +9,4 @@ The observer pattern is a software design pattern in which an object, called the
 ## Resources
 
 - [Wikipedia](http://en.wikipedia.org/wiki/Observer_pattern)
+- [SourceMaking.com](https://sourcemaking.com/design_patterns/observer)

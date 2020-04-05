@@ -1,7 +1,7 @@
 <?php
 
-class FancyDescriptionVisitor extends Visitor {
-
+class FancyDescriptionVisitor extends Visitor
+{
     private $description = NULL;
 
     /**
@@ -19,11 +19,11 @@ class FancyDescriptionVisitor extends Visitor {
     }
 
     /**
-     * @param BookVisitee $bookVisiteeIn
+     * @param BookVisitee $bookVisitee
      */
-    public function visitBook(BookVisitee $bookVisiteeIn) {
-        $this->setDescription($bookVisiteeIn->getTitle()
-            . '...!*@*! written !*! by !@! ' .  $bookVisiteeIn->getAuthor() );
+    public function visitBook(BookVisitee $bookVisitee) {
+        $this->setDescription($bookVisitee->getTitle()
+            . '...!*@*! written !*! by !@! ' .  $bookVisitee->getAuthor() );
     }
 
     /**

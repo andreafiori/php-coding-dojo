@@ -12,3 +12,4 @@ The memento pattern is implemented with three objects: the originator, a caretak
 ## Resources
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Memento_pattern)
+- [SourceMaking.com](https://sourcemaking.com/design_patterns/memento)
