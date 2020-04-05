@@ -1,6 +1,6 @@
 <?php
 
-class news {
+class News {
 
     public $db, $messageLogger;
 
@@ -19,7 +19,7 @@ class news {
     }
 }
 
-class singleton
+class Singleton
 {
     private static $_instance;
 
@@ -39,5 +39,5 @@ class singleton
 }
 
 $a = singleton::getInstance();
-$b = new news();
+$b = new News();
 $b->setVar("db", "database");

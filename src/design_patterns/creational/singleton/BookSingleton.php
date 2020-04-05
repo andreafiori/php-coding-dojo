@@ -1,39 +1,49 @@
 <?php
 
-class BookSingleton {
-
+class BookSingleton
+{
 	private $author = 'Gamma, Helm, Johnson, and Vlissides';
 	private $title  = 'Design Patterns';
-	private static $book = NULL;
-	private static $isLoanedOut = FALSE;
+	private static $book = null;
+	private static $isLoanedOut = false;
 
-	static function borrowBook() {
-		if (FALSE == self::$isLoanedOut) {
-			if (NULL == self::$book) {
+	public static function borrowBook()
+    {
+		if (false == self::$isLoanedOut) {
+			if (null == self::$book) {
 				self::$book = new BookSingleton();
 			}
-			self::$isLoanedOut = TRUE;
+			self::$isLoanedOut = true;
 			return self::$book;
-		} else {
-			return NULL;
 		}
+		return null;
 	}
 
 	/**
 	 * @param BookSingleton $bookReturned
 	 */
 	public function returnBook(BookSingleton $bookReturned) {
-		self::$isLoanedOut = FALSE;
+		self::$isLoanedOut = false;
 	}
 
-	function getAuthor() {return $this->author;}
+    /**
+     * @return string
+     */
+    public function getAuthor() {
+	    return $this->author;
+	}
 
-	function getTitle() {return $this->title;}
+    /**
+     * @return string
+     */
+    public function getTitle() {
+	    return $this->title;
+	}
 
 	/**
 	 * @return string
 	 */
-	function getAuthorAndTitle() {
+    public function getAuthorAndTitle() {
 		return $this->getTitle() . ' by ' . $this->getAuthor();
 	}
 

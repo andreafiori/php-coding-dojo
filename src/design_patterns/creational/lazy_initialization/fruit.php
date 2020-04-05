@@ -1,9 +1,17 @@
 <?php
-header('Content-type:text/plain; charset=utf-8');
 
-class Fruit {
-	private $type;
-	private static $types = array();
+
+class Fruit
+{
+    /**
+     * @var string
+     */
+    private $type;
+
+    /**
+     * @var array
+     */
+	private static $types = [];
 
 	private function __construct($type) {
 		$this->type = $type;
@@ -19,13 +27,14 @@ class Fruit {
 	}
 
 	public static function printCurrentTypes() {
-		echo 'Number of instances made: ' . count(self::$types) . "\n";
+		// echo 'Number of instances made: ' . count(self::$types) . "\n";
 		foreach (array_keys(self::$types) as $key) {
-			echo "$key\n";
+			//TODO: put $key in a variable
+            echo $key;
 		}
-		echo "\n";
 	}
 }
+
 
 Fruit::getFruit('Apple');
 Fruit::printCurrentTypes();

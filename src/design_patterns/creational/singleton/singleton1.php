@@ -1,7 +1,7 @@
 <?php
 
-class singleton {
-
+class Singleton
+{
     private static $instance;
 
     public $value1;
@@ -44,7 +44,7 @@ class singleton {
 
 }
 
-class application {
+class Application {
 
     private static $instance;
 
@@ -54,7 +54,7 @@ class application {
     {
         $this->channel = 1;
         
-        echo "Another mothod... ".$this->channel;
+        // echo "Another mothod... ".$this->channel;
     }
 	
     public function initialize()

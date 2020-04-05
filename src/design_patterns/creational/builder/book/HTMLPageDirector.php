@@ -1,20 +1,22 @@
 <?php
 
-class HTMLPageDirector extends AbstractPageDirector {
+namespace design_patterns\creational\builder\book;
 
+class HTMLPageDirector extends AbstractPageDirector
+{
     /**
-     * @var AbstractPageBuilder|null
+     * @var HTMLPageBuilder
      */
     private $builder = NULL;
 
     /**
-     * @param AbstractPageBuilder $builder_in
+     * @param AbstractPageBuilder $builder
      */
-    public function __construct(AbstractPageBuilder $builder_in) {
-        $this->builder = $builder_in;
+    public function __construct(AbstractPageBuilder $builder) {
+        $this->builder = $builder;
     }
 
-    public function buildPage() {
+    public function buildPage(): void {
         $this->builder->setTitle('Testing the HTMLPage');
         $this->builder->setHeading('Testing the HTMLPage');
         $this->builder->setText('Testing, testing, testing!');
@@ -24,6 +26,8 @@ class HTMLPageDirector extends AbstractPageDirector {
     }
 
     /**
+     * Get page
+     *
      * @return mixed
      */
     public function getPage() {

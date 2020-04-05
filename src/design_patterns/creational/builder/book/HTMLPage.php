@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\creational\builder\book;
+
 class HTMLPage {
 
     private $page = NULL;

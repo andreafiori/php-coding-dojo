@@ -1,9 +1,11 @@
 <?php
 
-class HTMLPageBuilder extends AbstractPageBuilder {
-    
+namespace design_patterns\creational\builder\book;
+
+class HTMLPageBuilder extends AbstractPageBuilder
+{
     private $page = NULL;
-    
+
     public function __construct() {
       $this->page = new HTMLPage();
     }
@@ -11,22 +13,22 @@ class HTMLPageBuilder extends AbstractPageBuilder {
     /**
      * @inheritdoc
      */
-    public function setTitle($title_in) {
-      $this->page->setTitle($title_in);
+    public function setTitle($title) {
+      $this->page->setTitle($title);
     }
 
     /**
      * @inheritdoc
      */
-    public function setHeading($heading_in) {
-      $this->page->setHeading($heading_in);
+    public function setHeading($heading) {
+      $this->page->setHeading($heading);
     }
 
     /**
      * @inheritdoc
      */
-    public function setText($text_in) {
-      $this->page->setText($text_in);
+    public function setText($text) {
+      $this->page->setText($text);
     }
 
     /**

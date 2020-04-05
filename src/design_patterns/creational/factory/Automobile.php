@@ -40,4 +40,4 @@ class AutomobileFactory
 
 $veyron = AutomobileFactory::create('Bugatti', 'Veyron');
 
-print_r($veyron->getMakeAndModel()); // outputs "Bugatti Veyron"
+print_r( $veyron->getMakeAndModel() ); // outputs "Bugatti Veyron"
