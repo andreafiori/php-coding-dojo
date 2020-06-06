@@ -41,6 +41,8 @@ class BookList
     }
 
     /**
+     * Add book
+     *
      * @param Book $book_in
      * @return int
      */

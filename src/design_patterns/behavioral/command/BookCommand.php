@@ -10,13 +10,17 @@ abstract class BookCommand
     protected $bookCommandee;
 
     /**
-     * @param $bookCommandee
+     * BookCommand constructor.
+     * @param BookCommandee $bookCommandee
      */
-    public function __construct(BookCommandee $bookCommandee) {
+    public function __construct(BookCommandee $bookCommandee)
+    {
         $this->bookCommandee = $bookCommandee;
     }
 
     /**
+     * Execute
+     *
      * @return mixed
      */
     abstract function execute();

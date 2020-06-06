@@ -2,15 +2,27 @@
 
 namespace design_patterns\behavioral\chain_of_responsibility;
 
-abstract class AbstractBookTopic {
-
+abstract class AbstractBookTopic
+{
+    /**
+     * Get topic
+     *
+     * @return mixed
+     */
 	abstract function getTopic();
 
+    /**
+     * Get title
+     *
+     * @return mixed
+     */
 	abstract function getTitle();
 
 	/**
-	 * @param string $title_in
+     * Set title
+     *
+	 * @param string $title
 	 * @return mixed
 	 */
-	abstract function setTitle($title_in);
+	abstract function setTitle($title);
 }

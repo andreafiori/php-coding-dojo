@@ -2,6 +2,9 @@
 
 namespace data_structures\stack;
 
+/**
+ * Stack: https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+ */
 class Stack
 {
     /**

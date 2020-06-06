@@ -28,6 +28,8 @@ class ListNode
     }
 
     /**
+     * Read node
+     *
      * @return mixed
      */
     public function readNode() {

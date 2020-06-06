@@ -30,7 +30,7 @@ class SeveralBooks extends OnTheBookShelf
     /**
      * Set book count
      *
-     * @param $newCount
+     * @param int $newCount
      */
     public function setBookCount($newCount) {
         $this->bookCount = $newCount;

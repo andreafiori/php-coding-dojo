@@ -38,10 +38,10 @@ class BookAuthorColleague extends BookColleague
     /**
      * Set author
      *
-     * @param $author_in
+     * @param $author
      */
-    public function setAuthor($author_in) {
-        $this->author = $author_in;
+    public function setAuthor($author) {
+        $this->author = $author;
     }
 
     /**

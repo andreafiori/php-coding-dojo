@@ -5,12 +5,12 @@ namespace data_structures\linked_lists;
 class DoublyLinkedList
 {
     /**
-     * @var null
+     * @var ListNode
      */
     private $_firstNode;
 
     /**
-     * @var null
+     * @var ListNode
      */
     private $_lastNode;
 
@@ -19,9 +19,9 @@ class DoublyLinkedList
      */
     private $_count;
 
-    function __construct() {
-        $this->_firstNode = NULL;
-        $this->_lastNode = NULL;
+    public function __construct() {
+        $this->_firstNode = null;
+        $this->_lastNode = null;
         $this->_count = 0;
     }
 
@@ -31,9 +31,14 @@ class DoublyLinkedList
      * @return bool
      */
     public function isEmpty() {
-        return ($this->_firstNode == NULL);
+        return ($this->_firstNode == null);
     }
 
+    /**
+     * Insert first
+     *
+     * @param $data
+     */
     public function insertFirst($data) {
         $newLink = new ListNode($data);
         
@@ -49,9 +54,12 @@ class DoublyLinkedList
     }
 
     /**
+     * Insert last
+     * 
      * @param $data
      */
-    public function insertLast($data) {
+    public function insertLast($data)
+    {
         $newLink = new ListNode($data);
         
         if($this->isEmpty()) {
@@ -65,20 +73,28 @@ class DoublyLinkedList
         $this->_count++;
     }
 
-    public function insertAfter($key, $data) {
+    /**
+     * Insert after
+     * 
+     * @param $key
+     * @param $data
+     * @return bool
+     */
+    public function insertAfter($key, $data)
+    {
         $current = $this->_firstNode;
         
         while($current->data != $key) {
             $current = $current->next;
             
-            if($current == NULL)
+            if($current == null)
                 return false;
         }
         
         $newLink = new ListNode($data);
         
         if($current == $this->_lastNode) {
-            $newLink->next = NULL;
+            $newLink->next = null;
             $this->_lastNode = $newLink;
         } else {
             $newLink->next = $current->next;
@@ -92,14 +108,19 @@ class DoublyLinkedList
         return true;
     }
 
-    public function deleteFirstNode() {
-        
+    /**
+     * Delete first node
+     * 
+     * @return null
+     */
+    public function deleteFirstNode()
+    {
         $temp = $this->_firstNode;
         
-        if($this->_firstNode->next == NULL) {
-            $this->_lastNode = NULL;
+        if($this->_firstNode->next == null) {
+            $this->_lastNode = null;
         } else {
-            $this->_firstNode->next->previous = NULL;
+            $this->_firstNode->next->previous = null;
         }
         
         $this->_firstNode = $this->_firstNode->next;
@@ -107,14 +128,19 @@ class DoublyLinkedList
         return $temp;
     }
 
-    public function deleteLastNode() {
-        
+    /**
+     * Delete last node
+     *
+     * @return ListNode|null
+     */
+    public function deleteLastNode()
+    {
         $temp = $this->_lastNode;
         
-        if($this->_firstNode->next == NULL) {
-            $this->firtNode = NULL;
+        if ($this->_firstNode->next == null) {
+            $this->firtNode = null;
         } else {
-            $this->_lastNode->previous->next = NULL;
+            $this->_lastNode->previous->next = null;
         }
         
         $this->_lastNode = $this->_lastNode->previous;
@@ -122,13 +148,19 @@ class DoublyLinkedList
         return $temp;
     }
 
-    public function deleteNode($key) {
-        
+    /**
+     * Delete node
+     *
+     * @param $key
+     * @return ListNode|mixed|null
+     */
+    public function deleteNode($key)
+    {
         $current = $this->_firstNode;
         
         while($current->data != $key) {
             $current = $current->next;
-            if($current == NULL)
+            if($current == null)
                 return null;
         }
         
@@ -145,30 +177,49 @@ class DoublyLinkedList
         }
         
         $this->_count--;
+
         return $current;
     }
 
-    public function displayForward() {
-        
+    /**
+     * Display forward
+     */
+    public function displayForward()
+    {
+        $nodeList = [];
+
         $current = $this->_firstNode;
-        
-        while($current != NULL) {
-            echo $current->readNode() . " ";
+        while($current != null) {
+            $nodeList[] = $current->readNode();
             $current = $current->next;
         }
+
+        return $nodeList;
     }
 
-    public function displayBackward() {
-        
+    /**
+     * Display backward
+     */
+    public function displayBackward()
+    {
+        $nodeList = [];
+
         $current = $this->_lastNode;
-        
-        while($current != NULL) {
-            echo $current->readNode() . " ";
+        while($current != null) {
+            $nodeList[] = $current->readNode();
             $current = $current->previous;
         }
+
+        return $nodeList;
     }
 
-    public function totalNodes() {
+    /**
+     * Total nodes
+     *
+     * @return int
+     */
+    public function totalNodes()
+    {
         return $this->_count;
     }
 

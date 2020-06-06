@@ -17,6 +17,8 @@ class Interpreter
     }
 
     /**
+     * Interpreter
+     *
      * @param $stringIn
      * @return null|string
      */

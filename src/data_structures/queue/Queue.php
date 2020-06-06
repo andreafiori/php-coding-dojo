@@ -2,6 +2,10 @@
 
 namespace data_structures\queue;
 
+/**
+ * Queue https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+ * @package data_structures\queue
+ */
 class Queue
 {
     /**
@@ -10,7 +14,7 @@ class Queue
     private $_items =[];
 
     /**
-     * Enqueue
+     * Enqueue item
      *
      * @param null $value
      */

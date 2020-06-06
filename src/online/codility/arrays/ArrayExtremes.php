@@ -2,7 +2,7 @@
 
 namespace online\codility\arrays;
 
-/*
+/**
 Array Extremes
 
 A zero-indexed array A consisting of N integers is given. The average value of array A is defined as:
@@ -15,10 +15,10 @@ Element A[P] is called extreme if its deviation is maximal among all the element
 
 For example, consider the following array A consisting of four elements:
 
-  A[0] =  9
-  A[1] =  4
-  A[2] = -3
-  A[3] = -10
+A[0] =  9
+A[1] =  4
+A[2] = -3
+A[3] = -10
 The average value of this array is (9 + 4 + (-3) + (-10)) / 4 = 0. The deviation of element A[2] is ((-3) - 0) = (0 - (-3)) = 3. The deviation of element A[3] is 10. It is an extreme element of array A, since no other element has a deviation greater than 10. There are no other extreme elements in this array.
 
 Write a function:
@@ -39,10 +39,12 @@ Complexity:
 - expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).
 
 Elements of input arrays can be modified.
-*/
+ */
 class  ArrayExtremes
 {
     /**
+     * Array Extremes solution
+     *
      * @param array $A
      * @return int|string
      */
@@ -56,13 +58,10 @@ class  ArrayExtremes
             return -1;
         }
 
-        foreach($A as $key => $value)
-        {
-            if ($value < 0)
-            {
+        foreach($A as $key => $value) {
+            if ($value < 0) {
                 $extremes[$key] = (int) abs($value);
-                if ($extremes[$key] > $extremesMax)
-                {
+                if ($extremes[$key] > $extremesMax) {
                     $extremesMax = $extremes[$key];
                     $extremeMaxKey = $key;
                 }

@@ -11,7 +11,6 @@ class ArrayTreeBuilderTest extends TestCase
     {
         $treeRecursivery = ArrayTreeBuilder::buildRecursiveArrayTree(self::getInputSample());
 
-        // TODO: testare i valori dell'array
         $this->assertTrue( is_array($treeRecursivery) && !empty($treeRecursivery) );
     }
 
@@ -22,6 +21,19 @@ class ArrayTreeBuilderTest extends TestCase
         $this->assertTrue( empty($treeRecursivery) );
     }
 
+    public function testSortArrayByIds()
+    {
+        $inputSample = $this->getInputSample();
+        $sortedArray = ArrayTreeBuilder::sortArrayByIds($inputSample);
+
+        $this->assertEquals($sortedArray[1], $inputSample[0]);
+    }
+
+    /**
+     * Get array input sample
+     *
+     * @return array
+     */
     private function getInputSample()
     {
         return [

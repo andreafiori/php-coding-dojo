@@ -9,11 +9,11 @@ class BookTitleColleague extends BookColleague {
     private $state;
 
     /**
-     * @param $title_in
+     * @param $title_
      * @param $mediator_in
      */
-    public function __construct($title_in, $mediator_in) {
-        $this->title = $title_in;
+    public function __construct($title_, $mediator_in) {
+        $this->title = $title_;
         parent::__construct($mediator_in);
     }
 

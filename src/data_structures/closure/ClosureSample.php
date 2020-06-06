@@ -15,6 +15,8 @@ class ClosureSample
     private static $sfoo = 1;
 
     /**
+     * Get sFoo
+     *
      * @var int
      */
     private static $ifoo = 2;
@@ -24,6 +26,8 @@ class ClosureSample
     }
 
     /**
+     * Get iFoo
+     *
      * @return int
      */
     static function getiFoo() {

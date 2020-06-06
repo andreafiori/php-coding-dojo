@@ -44,8 +44,8 @@ class BookTopic extends AbstractBookTopic
 	/**
 	 * @inheritDoc
 	 */
-	public function setTitle($title_in)
+	public function setTitle($title)
     {
-		$this->title = $title_in;
+		$this->title = $title;
 	}
 }

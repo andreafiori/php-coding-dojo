@@ -14,6 +14,8 @@ namespace online\project_euler;
 class Problem0001
 {
     /**
+     * Find multiples of 3 and 5
+     *
      * @return float|int
      */
     public static function solution()

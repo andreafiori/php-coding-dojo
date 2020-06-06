@@ -2,30 +2,45 @@
 
 namespace design_patterns\behavioral\chain_of_responsibility;
 
-class BookSubSubTopic extends AbstractBookTopic {
-
+class BookSubSubTopic extends AbstractBookTopic
+{
+    /**
+     * @var string
+     */
 	private $topic;
+
+    /**
+     * @var BookSubTopic
+     */
 	private $parentTopic;
+
+    /**
+     * @var string
+     */
 	private $title;
 
 	/**
-	 * @param $topic_in
-	 * @param BookSubTopic $parentTopic_in
+	 * @param $topic
+	 * @param BookSubTopic $parentTopic
 	 */
-	public function __construct($topic_in, BookSubTopic $parentTopic_in) {
-		$this->topic        = $topic_in;
-		$this->parentTopic  = $parentTopic_in;
-		$this->title        = NULL;
+	public function __construct($topic, BookSubTopic $parentTopic) {
+		$this->topic        = $topic;
+		$this->parentTopic  = $parentTopic;
+		$this->title        = null;
 	}
 
-	/**
-	 * @return mixed
-	 */
+    /**
+     * Get topic
+     *
+     * @return string
+     */
 	public function getTopic() {
 		return $this->topic;
 	}
 
 	/**
+     * Get parent topic
+     *
 	 * @return BookSubTopic
 	 */
 	public function getParentTopic() {
@@ -33,20 +48,23 @@ class BookSubSubTopic extends AbstractBookTopic {
 	}
 
 	/**
+     * Get title
+     *
 	 * @return null|string
 	 */
 	public function getTitle() {
-		if (NULL != $this->title) {
+		if (null != $this->title) {
 			return $this->title;
-		} else {
-			return $this->parentTopic->getTitle();
 		}
+		return $this->parentTopic->getTitle();
 	}
 
 	/**
-	 * @param string $title_in
+     * Set title
+     *
+	 * @param string $title
 	 */
-	public function setTitle($title_in) {
-		$this->title = $title_in;
+	public function setTitle($title) {
+		$this->title = $title;
 	}
 }

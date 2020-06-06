@@ -9,8 +9,6 @@ This feature makes it LIFO data structure. LIFO stands for Last-in-first-out. He
 
 Conceptually, a stack is simple: a data structure that allows adding and removing elements in a particular order. Every time an element is added, it goes on the top of the stack; the only element that can be removed is the element that was at the top of the stack. Consequently, a stack is said to have "first in last out" behavior (or "last in, first out"). The first item added to a stack will be the last item removed from a stack.
 
-![Stack](./images/stack.svg)
-
 ### Basic Operations:
 
 Stack operations may involve initializing the stack, using it and then de-initializing it. Apart from these basic stuffs, a stack is used for the following two primary operations −
@@ -45,15 +43,15 @@ To use a stack efficiently, we need to check the status of stack as well. For th
 In PHP, Stack can be easily implemented by an Array. PHP have the built-in methods called 'array_push'(insert at the end of an array) and 'array_pop'(remove from the end of an array), which do exactly the same operation as Stack.
 ```
 
-
 #### Complexity Analysis
+
 - Insertion - O(1)
 - Deletion - O(1)
 - Access - O(n)
 - Search - O(n)
 
-
 ### More on this topic
-- https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
-- https://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm
-- https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Stack_\(abstract_data_type\))
+- [TutorialPoint](https://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm)
+- [Wikibooks](https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues)

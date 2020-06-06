@@ -150,9 +150,11 @@ Circular lists are useful in applications to repeatedly go around the list (impl
 
 
 #### Array vs Linked List
-http://www.geeksforgeeks.org/linked-list-vs-array/
+
+- [GeekForGeeks](http://www.geeksforgeeks.org/linked-list-vs-array/)
 
 ### More on this topic
-- https://en.wikipedia.org/wiki/Linked_list
-- https://www.hackerearth.com/practice/data-structures/linked-list/singly-linked-list/tutorial/
-- https://www.tutorialspoint.com/data_structures_algorithms/linked_list_algorithms.htm
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Linked_list)
+- [Hacker Earth](https://www.hackerearth.com/practice/data-structures/linked-list/singly-linked-list/tutorial/)
+- [TutorialPoint](https://www.tutorialspoint.com/data_structures_algorithms/linked_list_algorithms.htm)

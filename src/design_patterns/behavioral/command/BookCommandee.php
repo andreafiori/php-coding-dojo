@@ -17,12 +17,12 @@ class BookCommandee
     /**
      * Set author and title
      *
-     * @param string $title_in
-     * @param string $author_in
+     * @param string $title
+     * @param string $author
      */
-    public function __construct($title_in, $author_in) {
-        $this->setAuthor($author_in);
-        $this->setTitle($title_in);
+    public function __construct($title, $author) {
+        $this->setAuthor($author);
+        $this->setTitle($title);
     }
 
     /**

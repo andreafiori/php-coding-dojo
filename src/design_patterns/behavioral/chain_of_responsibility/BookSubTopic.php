@@ -2,22 +2,33 @@
 
 namespace design_patterns\behavioral\chain_of_responsibility;
 
-class BookSubTopic extends AbstractBookTopic {
+class BookSubTopic extends AbstractBookTopic
+{
+    /**
+     * @var string
+     */
+    private $topic;
 
-	private $topic;
-	private $parentTopic;
-	private $title;
+    /**
+     * @var BookSubTopic
+     */
+    private $parentTopic;
+
+    /**
+     * @var string
+     */
+    private $title;
 
 	/**
      * Set topic and parent topic
      *
-	 * @param string $topic_in
-	 * @param BookTopic $parentTopic_in
+	 * @param string $topic
+	 * @param BookTopic $parentTopic
 	 */
-	public function __construct($topic_in, BookTopic $parentTopic_in) {
-		$this->topic = $topic_in;
-		$this->parentTopic = $parentTopic_in;
-		$this->title = NULL;
+	public function __construct($topic, BookTopic $parentTopic) {
+		$this->topic = $topic;
+		$this->parentTopic = $parentTopic;
+		$this->title = null;
 	}
 
 	/**
@@ -44,17 +55,16 @@ class BookSubTopic extends AbstractBookTopic {
 	 * @return null|string
 	 */
 	public function getTitle() {
-		if (NULL != $this->title) {
+		if (null != $this->title) {
 			return $this->title;
-		} else {
-			return $this->parentTopic->getTitle();
 		}
+		return $this->parentTopic->getTitle();
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function setTitle($title_in) {
-		$this->title = $title_in;
+	public function setTitle($title) {
+		$this->title = $title;
 	}
 }

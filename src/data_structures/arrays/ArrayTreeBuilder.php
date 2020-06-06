@@ -39,7 +39,7 @@ class ArrayTreeBuilder
      */
     public static function sortArrayByIds(array $arrayInput)
     {
-        $arraySorted = array();
+        $arraySorted = [];
         foreach($arrayInput as $arr) {
             if (isset($arr['id'])) {
                 $arraySorted[$arr['id']] = $arr;

@@ -7,7 +7,7 @@ class BookList
     /**
      * @var array
      */
-    private $books = array();
+    private $books = [];
 
     /**
      * @var int
