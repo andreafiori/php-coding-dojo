@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\structural\bridge\book;
+
 class BridgeBookAuthorTitle extends BridgeBook {
 
     /**

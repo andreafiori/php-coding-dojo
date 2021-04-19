@@ -5,7 +5,7 @@ namespace algorithms\math;
 /**
  * Armstrong Number implementation
  *
- * https://en.wikipedia.org/wiki/Narcissistic_number
+ * @see https://en.wikipedia.org/wiki/Narcissistic_number
  */
 class ArmstrongNumber
 {

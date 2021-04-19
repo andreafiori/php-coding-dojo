@@ -2,10 +2,21 @@
 
 namespace design_patterns\behavioral\chain_of_responsibility;
 
-class BookSubTopic extends AbstractBookTopic {
-
+class BookSubTopic extends AbstractBookTopic
+{
+    /**
+     * @var string
+     */
 	private $topic;
+
+    /**
+     * @var BookTopic
+     */
 	private $parentTopic;
+
+    /**
+     * @var null
+     */
 	private $title;
 
 	/**

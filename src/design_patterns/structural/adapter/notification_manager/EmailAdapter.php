@@ -1,6 +1,8 @@
 <?php
 
-class EmailAdapter implements NotificationInterface 
+namespace design_patterns\structural\adapter\notification_manager;
+
+class EmailAdapter implements NotificationInterface
 {
 	protected $_data;
 

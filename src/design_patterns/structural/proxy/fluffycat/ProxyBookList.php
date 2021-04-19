@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\structural\proxy\fluffycat;
+
 class ProxyBookList {
 
     private $bookList = NULL;

@@ -1,8 +1,10 @@
 <?php
 
-class FlyweightFactory {
+namespace design_patterns\structural\flyweight\fluffycat;
 
-    private $books = array();
+class FlyweightFactory
+{
+    private $books = [];
 
     public function __construct() {
         $this->books[1] = NULL;
@@ -11,6 +13,8 @@ class FlyweightFactory {
     }
 
     /**
+     * Get book
+     *
      * @param $bookKey
      * @return mixed
      */
@@ -35,6 +39,8 @@ class FlyweightFactory {
     }
 
     /**
+     * Make book2
+     *
      * @return FlyweightBook
      */
     public function makeBook2() {
@@ -42,6 +48,8 @@ class FlyweightFactory {
     }
 
     /**
+     * Make book 3
+     *
      * @return FlyweightBook
      */
     public function makeBook3() {

@@ -2,8 +2,8 @@
 
 namespace design_patterns\behavioral\command;
 
-class BookStarsOnCommand extends BookCommand {
-
+class BookStarsOnCommand extends BookCommand
+{
     public function execute() {
         $this->bookCommandee->setStarsOn();
     }

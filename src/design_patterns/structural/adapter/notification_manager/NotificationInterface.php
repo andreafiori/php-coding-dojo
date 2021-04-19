@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\structural\adapter\notification_manager;
+
 interface NotificationInterface {
 
     /**

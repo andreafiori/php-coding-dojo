@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\structural\proxy\fluffycat;
+
 class Book {
 
     private $author;

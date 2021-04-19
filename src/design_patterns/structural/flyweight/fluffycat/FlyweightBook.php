@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\structural\flyweight\fluffycat;
+
 class FlyweightBook {
 
     private $author;

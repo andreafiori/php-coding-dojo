@@ -2,8 +2,11 @@
 
 namespace design_patterns\behavioral\command;
 
-abstract class BookCommand {
-
+abstract class BookCommand
+{
+    /**
+     * @var BookCommandee
+     */
     protected $bookCommandee;
 
     /**

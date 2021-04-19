@@ -1,5 +1,4 @@
-Proxy Book Example
-============================
+# Proxy Book Example
 
 In this example, the ProxyBookList is created in place of the more resource intensive BookList.
 

@@ -1,7 +1,12 @@
 <?php
 
-class PaypalAdapter implements shopAdapter {
+namespace design_patterns\structural\adapter\paypal_adapter;
 
+class PaypalAdapter implements ShopAdapterInterface
+{
+    /**
+     * @var Shop
+     */
     private $shop;
 
     /**

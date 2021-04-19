@@ -3,7 +3,8 @@
 namespace algorithms\math;
 
 /**
- * Given an integer n, the task is to find whether n can be expressed as sum of five consecutive integer. If yes, find the five consecutive integers, else print “-1”.
+ * Given an integer n, the task is to find whether n can be expressed as sum of five consecutive integer.
+ * If yes, find the five consecutive integers, else print “-1”.
  *
  * Examples:
  * Input : n = 15
@@ -16,6 +17,12 @@ namespace algorithms\math;
  */
 class CheckSumFiveNumbers
 {
+    /**
+     * Check sum five numbers, effictient approach
+     *
+     * @param int $n
+     * @return float[]|int[]
+     */
     public static function efficientApproach(int $n)
     {
         if ($n == 0) {

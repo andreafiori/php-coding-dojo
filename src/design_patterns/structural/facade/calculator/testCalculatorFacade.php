@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\structural\facade\calculator;
+
 class Adder
 {
     public function add($a, $b)

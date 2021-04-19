@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\structural\proxy\fluffycat;
+
 class BookList {
 
     private $books = array();

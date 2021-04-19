@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\structural\adapter\paypal_adapter;
+
 interface ShopAdapterInterface {
 
     /**

@@ -35,7 +35,7 @@ class MathematicalLibraryTest extends TestCase
     {
         $spyDisplay = \Mockery::mock('Display');
 
-        $mathLib = new MathematicalLibrary(new Calculator(), $spyDisplay);
+        $mathLib = new MathematicalLibrary(new calculator(), $spyDisplay);
 
         $spyDisplay->shouldReceive('show')->atLeast()->once()->with(9);
 
@@ -58,7 +58,7 @@ class MathematicalLibraryTest extends TestCase
      */
     private function aCalculatorWithSum($sum)
     {
-        $stubCalc = \Mockery::mock('Calculator');
+        $stubCalc = \Mockery::mock('calculator');
         $stubCalc->shouldReceive('add')->andReturn($sum);
         return $stubCalc;
     }

@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\structural\bridge\book;
+
 abstract class BridgeBook {
 
     private $bbAuthor;

@@ -1,5 +1,7 @@
 <?php
 
+namespace design_patterns\structural\facade\fluffycat;
+
 class ArrayStringFunctions {
 
     /**
