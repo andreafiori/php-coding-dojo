@@ -36,7 +36,7 @@ class Player
      * @param integer $points
      * @return integer
      */
-    public function earnPoints($points)
+    public function earnPoints($points): int
     {
         $this->points = $points;
 
