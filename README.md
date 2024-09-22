@@ -30,7 +30,7 @@ Run the tests with PHPUnit:
 
 ## Generate Code Coverage
 
-Be sure to have the X-Debug PHP extension: 
+Be sure to have the X-Debug PHP extension:
 
     vendor\bin\phpunit -c tests --coverage-html=coverage
 
@@ -41,3 +41,5 @@ Be sure to have the X-Debug PHP extension:
 - [Kata Catalogue](http://codingdojo.org/KataCatalogue/)
 - [Data structure](https://en.wikipedia.org/wiki/Data_structure)
 - [Algorithm](https://en.wikipedia.org/wiki/Algorithm)
+- [Codility](https://www.codility.com)
+- 
