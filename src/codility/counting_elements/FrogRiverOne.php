@@ -76,27 +76,21 @@ class FrogRiverOne
      */
     public function solution($X, $A)
     {
-        // Earliest time when the frog can jump to the other side of the river
-        $earliestTime = -1;
-
-        // Positions on the river where leaf has already fallen
-        $coveredPositions = [];
+        $arrayLength = count($A);
+        if ($X < 1 || $arrayLength == 0 || $arrayLength < $X) {
+            return -1;
+        }
 
         // Iterating through the falling leaves positions with their falling times in minutes
-        foreach ($A as $K => $position) {
-            // Checking when the leaf has covered the position,
-            // we are interested only to get to the end position $X
-            if (!isset($coveredPositions[$position]) && $position <= $X) {
-                $coveredPositions[$position] = $K;
-                // If all positions to reach the end position are covered, we return minute when that happend
-                if (count($coveredPositions) === $X) {
-                    $earliestTime = $K;
-                    break;
-                }
+        $path = array_fill_keys(range(1, $X), 0);
+        foreach ($A as $second => $position) {
+            unset($path[$position]);
+            // If all positions to reach the end position are covered, we return minute when that happend
+            if (count($path) === 0) {
+                return $second;
             }
         }
 
-        // if end position is not reached
-        return $earliestTime;
+        return -1;
     }
 }
