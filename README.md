@@ -6,7 +6,8 @@ Data structures, algorithms, design patterns and code katas implementations with
 
 ## Requirements
 
-PHP >= 7 and Composer are required.
+- PHP 8.2.4 compatible
+- Composer
 
 ## Installation
 
@@ -34,6 +35,21 @@ Be sure to have the X-Debug PHP extension:
 
     vendor\bin\phpunit -c tests --coverage-html=coverage
 
+Installing X-Debug:
+
+- [Download X-Debug](https://xdebug.org/download) for you operating system
+- In Windows: copy the dll file in the php\ext directory
+- Rename the dll file to: php_xdebug.dll
+
+Configuration on php.ini file:
+
+    output_buffering=off
+
+    [XDebug]
+    zend_extension=xdebug
+    xdebug.mode=debug,coverage
+    xdebug.start_with_request=trigger
+
 ## Resources
 
 - [PHPUnit](https://phpunit.de)
@@ -42,4 +58,3 @@ Be sure to have the X-Debug PHP extension:
 - [Data structure](https://en.wikipedia.org/wiki/Data_structure)
 - [Algorithm](https://en.wikipedia.org/wiki/Algorithm)
 - [Codility](https://www.codility.com)
-- 

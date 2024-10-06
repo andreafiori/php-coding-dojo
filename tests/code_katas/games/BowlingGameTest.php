@@ -1,6 +1,6 @@
 <?php
 
-namespace test\code_katas\games;
+namespace tests\code_katas\games;
 
 use PHPUnit\Framework\TestCase;
 use code_katas\games\bowling\BowlingGame;

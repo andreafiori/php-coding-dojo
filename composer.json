@@ -9,8 +9,16 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "": "tests/"
+            "tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "composer dump-autoload"
+        ],
+        "post-install-cmd": [
+            "composer dump-autoload"
+        ]
     },
     "require": {
         "php": ">=8.2"

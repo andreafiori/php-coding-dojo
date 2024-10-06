@@ -36,7 +36,7 @@ Complexity:
         expected worst-case time complexity is O(1);
         expected worst-case space complexity is O(1).
 */
-class FrogJmp
+class FrogJump
 {
     /**
      * CODILITY ANALYSIS: https://codility.com/demo/results/training56G4RN-ZUE/

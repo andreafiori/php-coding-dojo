@@ -1,10 +1,11 @@
-<phpunit backupGlobals="true" bootstrap="./bootstrap.php">
-    <filter>
-        <whitelist>
-            <directory>./</directory>
-        </whitelist>
-    </filter>
-    <testsuite name="AutomatedPHPTesting">
-        <directory>./</directory>
-    </testsuite>
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="true" bootstrap="./bootstrap.php" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd" cacheDirectory=".phpunit.cache">
+  <testsuite name="AutomatedPHPTesting">
+    <directory>./</directory>
+  </testsuite>
+  <source>
+    <include>
+      <directory>./</directory>
+    </include>
+  </source>
 </phpunit>

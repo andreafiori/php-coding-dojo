@@ -1,16 +1,14 @@
 <?php
 
-namespace test\code_katas\games;
+namespace tests\code_katas\games;
 
-use code_katas\games\MasterMind;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
+use code_katas\games\MasterMind;
 
 class MasterMindTest extends TestCase
 {
-    /**
-     * @var MasterMind
-     */
-    private $game;
+    private MasterMind $game;
 
     protected function setUp(): void
     {
@@ -31,10 +29,9 @@ class MasterMindTest extends TestCase
         $this->assertEquals("Yay! I win!", $this->game->guess());
     }
 
-    /**
-     * @dataProvider not_perfect_guesses
-     */
-    public function test_ifScoreIsntPerfectBreakerDoesntYay($aNotPerfectGuess) {
+    #[DataProvider('not_perfect_guesses')]
+    public function test_ifScoreIsntPerfectBreakerDoesntYay($aNotPerfectGuess)
+    {
         $this->game->score($aNotPerfectGuess);
         $this->assertNotEquals(
             "Yay! I win!",
@@ -64,10 +61,13 @@ class MasterMindTest extends TestCase
     public function test_ifScoreIsntPerfectNewGuessIsDifferentFromAllPreviousOnes()
     {
         $firstGuess = $this->game->guess();
+
         $this->game->score('+');
         $secondGuess = $this->game->guess();
+
         $this->game->score('+');
         $thirdGuess = $this->game->guess();
+
         $this->assertNotEquals($firstGuess, $secondGuess);
         $this->assertNotEquals($firstGuess, $thirdGuess);
         $this->assertNotEquals($secondGuess, $thirdGuess);
