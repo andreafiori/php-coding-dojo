@@ -1,34 +1,34 @@
 <?php
 
-namespace tests\codility\fibonacci_numbers;
+namespace tests\codility\greedy_algorithms;
 
 use PHPUnit\Framework\TestCase;
 use tests\utils\TestsAcceptance;
-use codility\fibonacci_numbers\Ladder;
+use codility\greedy_algorithms\TieRopes;
 
-class LadderTest extends TestCase
+class TieRopesTest extends TestCase
 {
     use TestsAcceptance;
 
     protected function setUp(): void
     {
-        $this->fixture = new Ladder();
+        $this->fixture = new TieRopes();
     }
 
     public static function acceptanceProvider(): array
     {
         return [
             [
-                [[0], [0]], [1],
+                [10, [5]], 0
             ],
             [
-                [[1], [1]], [1],
+                [5, [5]], 1
             ],
             [
-                [[2, 3, 4, 5], [2, 3, 4, 5]], [2, 3, 5, 8]
+                [10, [5, 3, 2, 1]], 1
             ],
             [
-                [[4, 4, 5, 5, 1], [3, 2, 4, 3, 1]], [5, 1, 8, 0, 1]
+                [4, [1, 2, 3, 4, 1, 1, 3]], 3
             ]
         ];
     }
