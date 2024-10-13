@@ -45,8 +45,6 @@ Elements of input arrays can be modified.
 class Dominator
 {
     /**
-     * Dominator task.
-     *
      * CODILITY ANALYSIS: https://codility.com/demo/results/training5YQZWK-DX2/
      * LEVEL: EASY
      * Correctness: 100%
@@ -58,38 +56,74 @@ class Dominator
      * @return int The index of any element of array A in which the dominator of A occurs,
      * or −1 if array A does not have a dominator
      */
-    public function solution($A)
+    public function solution(array $A): int
     {
-        // Number of occurrences of each integer
-        $integerOccurrences = [];
-        // Maximum number of occurrences
-        $maxOccurrences = 0;
-        // Index of integer with maximum occurrences
-        $maxOccurrencesKey = null;
+        $arrayLength = count($A);
 
-        foreach ($A as $key => $value) {
-            if (empty($integerOccurrences[$value])) {
-                $integerOccurrences[$value] = 1;
-            } else {
-                $integerOccurrences[$value]++;
-            }
-
-            // Searching for integer with maxiumum occurences, and index of that integer
-            if ($integerOccurrences[$value] > $maxOccurrences) {
-                $maxOccurrences = $integerOccurrences[$value];
-                $maxOccurrencesKey = $key;
-            }
-        }
-
-        // Number of integers in array $A
-        $N = count($A);
-
-        // If index of integer with maxiumum occurences is not set,
-        // or integer with maxiumum occurences doesn't occur in more than half of the elements of $A
-        if ($maxOccurrencesKey === null || ($maxOccurrences <= $N / 2)) {
+        if ($arrayLength === 0) {
             return -1;
         }
 
-        return $maxOccurrencesKey;
+        if ($arrayLength === 1) {
+            return 0;
+        }
+
+        asort($A);
+
+        $lastVal = null;
+        $valIndexes = [];
+        $tempValIndexes = [];
+
+        foreach ($A as $i => $val) {
+            if ($lastVal !== $val) {
+                if (count($tempValIndexes) > count($valIndexes)) {
+                    $valIndexes = $tempValIndexes;
+                }
+                $tempValIndexes = [];
+                $lastVal = $val;
+            }
+            $tempValIndexes[] = $i;
+        }
+
+        if (count($tempValIndexes) > count($valIndexes)) {
+            $valIndexes = $tempValIndexes;
+        }
+
+        return count($valIndexes) > $arrayLength / 2 ? $valIndexes[0] : -1;
     }
+
+//    public function solution($A)
+//    {
+//        // Number of occurrences of each integer
+//        $integerOccurrences = [];
+//        // Maximum number of occurrences
+//        $maxOccurrences = 0;
+//        // Index of integer with maximum occurrences
+//        $maxOccurrencesKey = null;
+//
+//        foreach ($A as $key => $value) {
+//            if (empty($integerOccurrences[$value])) {
+//                $integerOccurrences[$value] = 1;
+//            } else {
+//                $integerOccurrences[$value]++;
+//            }
+//
+//            // Searching for integer with maxiumum occurences, and index of that integer
+//            if ($integerOccurrences[$value] > $maxOccurrences) {
+//                $maxOccurrences = $integerOccurrences[$value];
+//                $maxOccurrencesKey = $key;
+//            }
+//        }
+//
+//        // Number of integers in array $A
+//        $N = count($A);
+//
+//        // If index of integer with maxiumum occurences is not set,
+//        // or integer with maxiumum occurences doesn't occur in more than half of the elements of $A
+//        if ($maxOccurrencesKey === null || ($maxOccurrences <= $N / 2)) {
+//            return -1;
+//        }
+//
+//        return $maxOccurrencesKey;
+//    }
 }

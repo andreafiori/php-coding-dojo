@@ -49,8 +49,6 @@ Elements of input arrays can be modified.
 class Triangle
 {
     /**
-     * Triangle task.
-     *
      * CODILITY ANALYSIS: https://codility.com/demo/results/trainingMZ5RSX-UUM/
      * LEVEL: EASY
      * Correctness:	100%
@@ -96,10 +94,6 @@ class Triangle
      */
     public function isTripletTriangular($P, $Q, $R): bool
     {
-        if ($P + $Q > $R && $P + $R > $Q && $Q + $R > $P) {
-            return true;
-        }
-
-        return false;
+        return ($P + $Q > $R && $P + $R > $Q && $Q + $R > $P) ? true : false;
     }
 }

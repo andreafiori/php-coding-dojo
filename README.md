@@ -50,6 +50,22 @@ Configuration on php.ini file:
     xdebug.mode=debug,coverage
     xdebug.start_with_request=trigger
 
+## PHPUnit test results
+
+For each test run, the PHPUnit command-line tool prints one character to indicate progress:
+
+. => Printed when a successful test has no issues
+F => Printed when an assertion fails while running the test method
+E => Printed when an error occurs while running the test method
+W => Printed when the test triggered a warning
+R => Printed when the test has been considered risky (see Risky Tests)
+D => Printed when the test triggered a deprecation
+N => Printed when the test triggered a notice
+I => Printed when the test is marked as incomplete (see Incomplete Tests)
+S => Printed when the test was skipped (see Skipping Tests)
+
+To activate verbose mode, change testdox="false" to testdox="true" in phpunit.xml.
+
 ## Resources
 
 - [PHPUnit](https://phpunit.de)

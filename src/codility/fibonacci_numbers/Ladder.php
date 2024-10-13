@@ -111,9 +111,9 @@ class Ladder
      *
      * @return $cache array[P][climb_combinations_for_number_of_rungs]
      */
-    public function buildCache($MAX_RUNGS, $MIN_P, $MAX_P)
+    public function buildCache(int $MAX_RUNGS,int $MIN_P,int $MAX_P)
     {
-        $cache = array();
+        $cache = [];
 
         // iterating for every modulo P
         for ($P = $MIN_P; $P <= $MAX_P; $P++) {

@@ -80,6 +80,43 @@ Elements of input arrays can be modified.
 */
 class Flags
 {
+
+    public function solution(array $A): int
+    {
+        $arrayLength = count($A);
+
+        $peaks = [];
+        for ($i = 1; $i < $arrayLength - 1; $i++) {
+            if ($A[$i - 1] < $A[$i] && $A[$i] > $A[$i + 1]) {
+                $peaks[] = $i;
+            }
+        }
+
+        if (count($peaks) == 0) {
+            return 0;
+        }
+
+        $maxFlagCount = floor(sqrt($peaks[count($peaks)-1]-$peaks[0])) + 1;
+
+        for ($maxDistance = $maxFlagCount; $maxDistance > 1; $maxDistance--) {
+            $flagCount = 1;
+            $distanceBetween = 0;
+            for ($j = 1; $j < count($peaks); $j++) {
+                $distanceBetween += $peaks[$j] - $peaks[$j-1];
+                if ($distanceBetween >= $maxDistance) {
+                    $flagCount++;
+                    $fromFlag = 0;
+                }
+            }
+
+            if ($flagCount >= $maxDistance) {
+                return $maxDistance;
+            }
+        }
+
+        return 1;
+    }
+
     /**
      * CODILITY ANALYSIS: https://codility.com/demo/results/trainingF8UWBA-NJQ/
      * LEVEL: MEDIUM
@@ -91,41 +128,41 @@ class Flags
      *
      * @return int The maximum number of flags that can be set on the peaks of the array
      */
-    public function solution($A)
-    {
-        $N = count($A);
-        $next = $this->nextPeakPosition($A);
-
-        // The maximum number of flags that can be set on the peaks of the array
-        $maxFlags = 0;
-
-        $i = 1;
-        // For every index $i we cannot take more than $i flags and set more than (N / $i) + 1 flags
-        while (($i - 1) * $i <= $N) {
-            // Flags number
-            $flagsNum = 0;
-
-            $position = 1;
-            while ($position < $N && $flagsNum < $i) {
-                $position = $next[$position];
-                // If there is no next peak
-                if ($position == -1) {
-                    break;
-                }
-
-                $flagsNum += 1;
-                $position += $i;
-            }
-
-            if ($flagsNum > $maxFlags) {
-                $maxFlags = $flagsNum;
-            }
-
-            $i += 1;
-        }
-
-        return $maxFlags;
-    }
+//    public function solution($A)
+//    {
+//        $N = count($A);
+//        $next = $this->nextPeakPosition($A);
+//
+//        // The maximum number of flags that can be set on the peaks of the array
+//        $maxFlags = 0;
+//
+//        $i = 1;
+//        // For every index $i we cannot take more than $i flags and set more than (N / $i) + 1 flags
+//        while (($i - 1) * $i <= $N) {
+//            // Flags number
+//            $flagsNum = 0;
+//
+//            $position = 1;
+//            while ($position < $N && $flagsNum < $i) {
+//                $position = $next[$position];
+//                // If there is no next peak
+//                if ($position == -1) {
+//                    break;
+//                }
+//
+//                $flagsNum += 1;
+//                $position += $i;
+//            }
+//
+//            if ($flagsNum > $maxFlags) {
+//                $maxFlags = $flagsNum;
+//            }
+//
+//            $i += 1;
+//        }
+//
+//        return $maxFlags;
+//    }
 
     /**
      * Next peak positions, except first 0, and last N - 1 position. Position with peak has its own position as

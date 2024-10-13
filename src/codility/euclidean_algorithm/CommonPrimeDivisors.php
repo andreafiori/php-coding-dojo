@@ -85,7 +85,7 @@ class CommonPrimeDivisors
     public function arePrimeDivisorsEqual(int $N, int $M): bool
     {
         // Greatest common divisor contains all common prime divisors
-        $gcd = gcd($N, $M);
+        $gcd = $this->gcd($N, $M);
 
         // If all prime divisors are not common
         if ($this->removeCommonPrimeDivisors($N, $gcd) !== 1) {
@@ -111,7 +111,7 @@ class CommonPrimeDivisors
     public function removeCommonPrimeDivisors(int $a, int $b): int
     {
         while ($a != 1) {
-            $gcd = gcd($a, $b);
+            $gcd = $this->gcd($a, $b);
 
             // If there are no more more common prime divisors
             if ($gcd == 1) {
@@ -135,10 +135,9 @@ class CommonPrimeDivisors
     public function gcd(int $a, int $b): int
     {
         if ($a < $b) {
-            return gcd($b, $a);
+            return $this->gcd($b, $a);
         }
 
-        return ($a % $b === 0) ? $b : gcd($b, $a % $b);
+        return ($a % $b === 0) ? $b : $this->gcd($b, $a % $b);
     }
-
 }

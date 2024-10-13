@@ -2,10 +2,10 @@
 
 namespace tests\codility\counting_elements;
 
-use codility\counting_elements\MaxCounters;
 use PHPUnit\Framework\TestCase;
 use tests\utils\TestsAcceptance;
 use tests\utils\TestsPerformance;
+use codility\counting_elements\MaxCounters;
 
 class MaxCountersTest extends TestCase
 {

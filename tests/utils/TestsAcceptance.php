@@ -11,7 +11,7 @@ trait TestsAcceptance
 
     #[Test]
     #[DataProvider('acceptanceProvider')]
-    public function dhouldPassAcceptanceTests($params, $expected)
+    public function shouldPassAcceptanceTests($params, $expected)
     {
         $actual = $this->fixture->solution(...$params);
 

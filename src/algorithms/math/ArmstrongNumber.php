@@ -12,10 +12,10 @@ class ArmstrongNumber
     /**
      * Check if a number is an Armstrong Number
      *
-     * @param int $n
+     * @param float $n
      * @return bool
      */
-    public static function isArmstrongNumber(int $n)
+    public static function isArmstrongNumber(float $n)
     {
         if ($n < 100) {
             return false;

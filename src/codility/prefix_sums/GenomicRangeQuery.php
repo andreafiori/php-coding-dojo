@@ -69,6 +69,30 @@ Elements of input arrays can be modified.
 */
 class GenomicRangeQuery
 {
+    private $mapper = ['A' => 1, 'C' => 2, 'G' => 3, 'T' => 4];
+    public function solution($S, $P, $Q): array
+    {
+        $return = [];
+        for ($i = 0; $i < count($P); $i++) {
+            $mString = substr($S, $P[$i], $Q[$i] - $P[$i] + 1);
+            $return[] = $this->getValue($mString);
+        }
+        return $return;
+    }
+
+    /**
+     * @param $string
+     * @return int|void
+     */
+    public function getValue(string $string)
+    {
+        foreach ($this->mapper as $char => $value) {
+            if (strpos($string, $char) !== false) {
+                return $value;
+            }
+        }
+    }
+
     /**
      * GenomicRangeQuery task.
      *
@@ -84,33 +108,33 @@ class GenomicRangeQuery
      *
      * @return int[] An array consisting of M integers specifying the consecutive answers to all queries
      */
-    public function solution($S, $P, $Q)
-    {
-        // Nucleotides and their impact factors
-        $nucleotides = [1 => 'A', 2 => 'C', 3 => 'G', 4 => 'T'];
-
-        // Number of DNA subsequences which are defined by array $P and $Q
-        $M = count($P);
-
-        // How many times nucleotide repeated till every position, including the position itself
-        $nucleotidesRepetitions = $this->getNucleotidesRepetitions($S, $nucleotides);
-
-        $minSubsequenceImpactFactors = [];
-        for ($i = 0; $i < $M; $i++) {
-            for ($j = 1; $j <= count($nucleotides); $j++) {
-                // Left and right sequence boundary
-                $left = isset($nucleotidesRepetitions[$P[$i] - 1][$j]) ? $nucleotidesRepetitions[$P[$i] - 1][$j] : 0;
-                $right = $nucleotidesRepetitions[$Q[$i]][$j];
-
-                if ($left < $right) {
-                    $minSubsequenceImpactFactors[] = $j;
-                    break;
-                }
-            }
-        }
-
-        return $minSubsequenceImpactFactors;
-    }
+//    public function solution($S, $P, $Q)
+//    {
+//        // Nucleotides and their impact factors
+//        $nucleotides = [1 => 'A', 2 => 'C', 3 => 'G', 4 => 'T'];
+//
+//        // Number of DNA subsequences which are defined by array $P and $Q
+//        $M = count($P);
+//
+//        // How many times nucleotide repeated till every position, including the position itself
+//        $nucleotidesRepetitions = $this->getNucleotidesRepetitions($S, $nucleotides);
+//
+//        $minSubsequenceImpactFactors = [];
+//        for ($i = 0; $i < $M; $i++) {
+//            for ($j = 1; $j <= count($nucleotides); $j++) {
+//                // Left and right sequence boundary
+//                $left = isset($nucleotidesRepetitions[$P[$i] - 1][$j]) ? $nucleotidesRepetitions[$P[$i] - 1][$j] : 0;
+//                $right = $nucleotidesRepetitions[$Q[$i]][$j];
+//
+//                if ($left < $right) {
+//                    $minSubsequenceImpactFactors[] = $j;
+//                    break;
+//                }
+//            }
+//        }
+//
+//        return $minSubsequenceImpactFactors;
+//    }
 
     /**
      * Gets how many times nucleotide repeated till every position, including the position itself.
@@ -120,22 +144,22 @@ class GenomicRangeQuery
      *
      * @return array
      */
-    public function getNucleotidesRepetitions(string $S, array $nucleotides): array
-    {
-        $nucleotidesRepetitions = [];
-
-        for ($i = 0; $i < strlen($S); $i++) {
-            for ($j = 1; $j <= count($nucleotides); $j++) {
-                $nucleotidesRepetitions[$i][$j] = isset($nucleotidesRepetitions[$i - 1][$j])
-                    ? $nucleotidesRepetitions[$i - 1][$j]
-                    : 0;
-
-                if ($S[$i] == $nucleotides[$j]) {
-                    $nucleotidesRepetitions[$i][$j]++;
-                }
-            }
-        }
-
-        return $nucleotidesRepetitions;
-    }
+//    public function getNucleotidesRepetitions(string $S, array $nucleotides): array
+//    {
+//        $nucleotidesRepetitions = [];
+//
+//        for ($i = 0; $i < strlen($S); $i++) {
+//            for ($j = 1; $j <= count($nucleotides); $j++) {
+//                $nucleotidesRepetitions[$i][$j] = isset($nucleotidesRepetitions[$i - 1][$j])
+//                    ? $nucleotidesRepetitions[$i - 1][$j]
+//                    : 0;
+//
+//                if ($S[$i] == $nucleotides[$j]) {
+//                    $nucleotidesRepetitions[$i][$j]++;
+//                }
+//            }
+//        }
+//
+//        return $nucleotidesRepetitions;
+//    }
 }

@@ -41,7 +41,7 @@ class RestorableIterator implements \Iterator, Restorable
      *
      * @return int
      */
-    public function key()
+    public function key(): mixed
     {
         return $this->_cursor;
     }
@@ -84,7 +84,7 @@ class RestorableIterator implements \Iterator, Restorable
     /**
      * @return bool
      */
-    public function valid()
+    public function valid(): bool
     {
         return $this->_valid;
     }

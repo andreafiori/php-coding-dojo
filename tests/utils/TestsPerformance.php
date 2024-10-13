@@ -2,8 +2,8 @@
 
 namespace tests\utils;
 
-use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 trait TestsPerformance
 {

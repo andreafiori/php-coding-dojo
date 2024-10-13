@@ -10,10 +10,10 @@ class Palindrome {
     /**
      * Check if a number is palindrome
      *
-     * @param Float $number
+     * @param float $number
      * @return bool
      */
-    public static function isPalindromeNumber($number)
+    public static function isPalindromeNumber(float $number)
     {
         $temp = $number;
         $new = 0;
@@ -28,7 +28,7 @@ class Palindrome {
     /**
      * Check if a string is palindrome using the strrev function
      *
-     * @param String $string
+     * @param string $string
      * @return bool
      */
     public static function isPalindrome($string)
@@ -43,13 +43,13 @@ class Palindrome {
     /**
      * Check if a string is palindrome using a recursive algorithm
      *
-     * @param String $string
+     * @param string|number $string
      * @return bool
      */
     public function isPalindromeRecursive($string)
     {
         // Base codition to end the recursive process
-        if ((strlen($string) == 1) || (strlen($string) == 0)) {
+        if ((strlen($string) === 1) || (strlen($string) === 0)) {
             return true;
         }
 

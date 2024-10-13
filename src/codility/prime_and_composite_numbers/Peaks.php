@@ -111,9 +111,9 @@ class Peaks
         $N = count($A);
 
         // Positions with peaks
-        $peaksPositions = getPeaksPositions($A);
+        $peaksPositions = $this->getPeaksPositions($A);
 
-        $divisors = findDivisors($N);
+        $divisors = $this->findDivisors($N);
         $blockSizes = array_slice($divisors, 1);
 
         // Searching for maximum number of blocks with all peaks
@@ -139,7 +139,7 @@ class Peaks
                     $blockEndPosition = ($i - 1) + 1;
                 }
 
-                $blockHasPeak = doesBlockHavePeak($peaksPositions, $blockStartPosition, $blockEndPosition);
+                $blockHasPeak = $this->doesBlockHavePeak($peaksPositions, $blockStartPosition, $blockEndPosition);
                 // If block doesn't have a peak
                 if (!$blockHasPeak) {
                     $blockWithoutPeakFounded = true;

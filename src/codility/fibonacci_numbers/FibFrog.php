@@ -139,7 +139,7 @@ class FibFrog
      * @param int $riverWidth Represent river width
      * @return array $fibJumps Fibonacci jumps distances
      */
-    public function getValidFibonacciDistances($riverWidth)
+    public function getValidFibonacciDistances(int $riverWidth): array
     {
         $fibJumps = array();
 
@@ -159,6 +159,7 @@ class FibFrog
 
         // F(0) = 0 => this is not a valid jump so we omit F(0)
         unset($fibJumps[0]);
+
         // F(1) = F(2) = 1 // this distance is duplicated, so we omit F(1)
         unset($fibJumps[1]);
 

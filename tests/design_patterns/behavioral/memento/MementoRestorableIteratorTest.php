@@ -1,6 +1,6 @@
 <?php
 
-namespace design_patterns\behavioral\memento;
+namespace tests\design_patterns\behavioral\memento;
 
 use PHPUnit\Framework\TestCase;
 use design_patterns\behavioral\memento\restorable_iterator\RestorableIterator;
