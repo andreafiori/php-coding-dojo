@@ -1,76 +1,105 @@
 # PHP Code Dojo
 
-[![Build Status](https://travis-ci.org/andreafiori/php-code-dojo.svg?branch=master)](https://travis-ci.org/andreafiori/php-code-dojo)
-
-Data structures, algorithms, design patterns and code katas implementations with PHP with Unit Tests and documentation.
+Data structures, algorithms, design patterns and code kata implementations in
+PHP, each with PHPUnit tests and documentation.
 
 ## Requirements
 
-- PHP 8.2.4 compatible
-- Composer
+- PHP >= 8.2 (locally verified on PHP 8.3)
+- Composer 2
 
 ## Installation
 
-    composer install
+```sh
+composer install
+```
 
-## Verify PHPUnit is installed correctly
+Verify PHPUnit is installed:
 
-On Windows:
+```sh
+vendor/bin/phpunit --version
+```
 
-	vendor\bin\phpunit --version
-
-On Linux:
-
-	./vendor/bin/phpunit --version
+(On Windows with cmd.exe use `vendor\bin\phpunit --version`.)
 
 ## Testing
 
-Run the tests with PHPUnit:
+The PHPUnit configuration lives in `tests/phpunit.xml`:
 
-    vendor\bin\phpunit -c tests
+```sh
+vendor/bin/phpunit -c tests
+```
 
-## Generate Code Coverage
+Useful variants:
 
-Be sure to have the X-Debug PHP extension:
+```sh
+# run a single test file
+vendor/bin/phpunit -c tests tests/code_katas/games/BowlingGameTest.php
 
-    vendor\bin\phpunit -c tests --coverage-html=coverage
+# run tests matching a name
+vendor/bin/phpunit -c tests --filter testWin
 
-Installing X-Debug:
+# verbose, human-readable output (flip testdox="true" in tests/phpunit.xml)
+vendor/bin/phpunit -c tests --testdox
+```
 
-- [Download X-Debug](https://xdebug.org/download) for you operating system
-- In Windows: copy the dll file in the php\ext directory
-- Rename the dll file to: php_xdebug.dll
+### Generating code coverage
 
-Configuration on php.ini file:
+Requires the Xdebug or pcov extension. With Xdebug:
 
-    output_buffering=off
+```sh
+vendor/bin/phpunit -c tests --coverage-html=coverage
+```
 
-    [XDebug]
-    zend_extension=xdebug
-    xdebug.mode=debug,coverage
-    xdebug.start_with_request=trigger
+Xdebug setup on Windows:
 
-## PHPUnit test results
+1. [Download Xdebug](https://xdebug.org/download) for your OS/PHP version.
+2. Copy the dll into the `php\ext` directory and rename it to `php_xdebug.dll`.
+3. In `php.ini`:
 
-For each test run, the PHPUnit command-line tool prints one character to indicate progress:
+```ini
+output_buffering = Off
 
-. => Printed when a successful test has no issues
-F => Printed when an assertion fails while running the test method
-E => Printed when an error occurs while running the test method
-W => Printed when the test triggered a warning
-R => Printed when the test has been considered risky (see Risky Tests)
-D => Printed when the test triggered a deprecation
-N => Printed when the test triggered a notice
-I => Printed when the test is marked as incomplete (see Incomplete Tests)
-S => Printed when the test was skipped (see Skipping Tests)
+[xdebug]
+zend_extension = xdebug
+xdebug.mode = debug,coverage
+xdebug.start_with_request = trigger
+```
 
-To activate verbose mode, change testdox="false" to testdox="true" in phpunit.xml.
+### Reading test output
+
+PHPUnit prints one character per test:
+
+| Char | Meaning |
+| --- | --- |
+| `.` | passed, no issues |
+| `F` | an assertion failed |
+| `E` | an error occurred while running the test |
+| `W` | the test triggered a warning |
+| `D` | the test triggered a deprecation |
+| `N` | the test triggered a notice |
+| `I` | test marked incomplete |
+| `S` | test was skipped |
+| `R` | test considered risky |
+
+## Project structure
+
+```
+src/
+  algorithms/       math, strings, search, graph
+  code_katas/       bowling, tennis, mastermind, ...
+  codility/         one folder per Codility lesson (brief + solution)
+tests/              mirrors src/, same folder structure
+  phpunit.xml       PHPUnit configuration
+docs/               kata write-ups (leap years, string calculator, games)
+notes/              exercise notes
+```
 
 ## Resources
 
 - [PHPUnit](https://phpunit.de)
 - [CodeKata.com](http://codekata.com)
-- [Kata Catalogue](http://codingdojo.org/KataCatalogue/)
-- [Data structure](https://en.wikipedia.org/wiki/Data_structure)
-- [Algorithm](https://en.wikipedia.org/wiki/Algorithm)
+- [Coding Dojo kata catalogue](http://codingdojo.org/KataCatalogue/)
 - [Codility](https://www.codility.com)
+- [Data structures](https://en.wikipedia.org/wiki/Data_structure)
+- [Algorithms](https://en.wikipedia.org/wiki/Algorithm)

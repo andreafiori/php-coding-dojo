@@ -16,7 +16,7 @@
   </testsuite>
   <source>
     <include>
-      <directory>./</directory>
+      <directory>../src</directory>
     </include>
   </source>
 </phpunit>

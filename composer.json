@@ -1,9 +1,17 @@
 {
     "name": "andreafiori/php-coding-dojo",
-    "description": "Data structures, algorithms, design patterns and code katas implementations with PHP with Unit Tests.",
-    "minimum-stability": "stable",
+    "description": "Data structures, algorithms, design patterns and code katas implementations with PHP and Unit Tests.",
+    "type": "project",
+"minimum-stability": "stable",
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5.3",
+        "mockery/mockery": "^1.6.7"
+    },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "": "src/"
         }
     },
@@ -12,19 +20,16 @@
             "tests\\": "tests/"
         }
     },
+    "config": {
+        "sort-packages": true
+    },
     "scripts": {
-        "post-update-cmd": [
-            "composer dump-autoload"
-        ],
+        "test": "phpunit -c tests",
         "post-install-cmd": [
-            "composer dump-autoload"
+            "@composer dump-autoload"
+        ],
+        "post-update-cmd": [
+            "@composer dump-autoload"
         ]
-    },
-    "require": {
-        "php": ">=8.2"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "11",
-        "mockery/mockery": "^1.6"
     }
 }
